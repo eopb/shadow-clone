@@ -1,7 +1,5 @@
 //! Go the the [readme](https://crates.io/crates/shadow-clone) file for more documentation.
 
-#![deny(clippy::pedantic, missing_docs)]
-
 /// Use this macro to clone variables into the current scope shadowing old ones.
 ///
 /// # Examples

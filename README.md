@@ -2,9 +2,8 @@
 A macro to clone variables into the current scope shadowing old ones.
 
 [![pipeline status](https://gitlab.com/efunb/shadow-clone/badges/stable/pipeline.svg)](https://gitlab.com/efunb/shadow-clone/commits/stable)
-[![License](https://img.shields.io/crates/l/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
 [![Latest version](https://img.shields.io/crates/v/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
-[![Latest Docs](https://docs.rs/shadow-clone/badge.svg)](https://docs.rs/shadow-clone/)
+[![Latest Docs](https://docs.rs/shadow-clone/badge.svg)](https://docs.rs/shadow-clone)
 [![downloads-badge](https://img.shields.io/crates/d/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
 
 ## Help
@@ -45,7 +44,7 @@ You can also clone multiple variables separated by commas. `shadow_clone!(foo, b
 
 ## Docs
 
-[API Documentation](https://docs.rs/shadow-clone/)
+[API Documentation](https://docs.rs/shadow-clone)
 
 ## **Warning**
 
