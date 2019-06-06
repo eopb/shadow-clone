@@ -22,6 +22,7 @@
 /// }
 /// let bar = s;
 /// ```
+/// You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
 #[macro_export]
 macro_rules! shadow_clone {
     ($ ($to_clone:ident) ,*) => {

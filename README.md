@@ -41,6 +41,7 @@ let s = "foo".to_string();
 }
 let bar = s;
 ```
+You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
 
 ## Docs
 
