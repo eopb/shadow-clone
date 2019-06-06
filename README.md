@@ -22,7 +22,7 @@ use shadow_clone::shadow_clone;
 ```
 to your main file.
 
-# Examples
+## Examples
 ```rust,compile_fail
 let s = "foo".to_string();
 let c = move |x: i32| format!("{}{}", s, x);
