@@ -19,9 +19,28 @@ shadow-clone = "0.0.1"
 ```
 to your `cargo.toml` under `[dependencies]` and add
 ```rust
-use shadow-clone::shadow_clone;
+use shadow_clone::shadow_clone;
 ```
 to your main file.
+
+# Examples
+```rust,compile_fail
+let s = "foo".to_string();
+let c = move |x: i32| format!("{}{}", s, x);
+let bar = s;
+```
+This will not compile as `s` has been moved into the closure.
+
+This issue can be solved with this macro.
+```rust
+use shadow_clone::shadow_clone;
+let s = "foo".to_string();
+{
+    shadow_clone!(s);
+    let c = move |x: i32| format!("{}{}", s, x);
+}
+let bar = s;
+```
 
 ## Docs
 
