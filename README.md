@@ -14,7 +14,7 @@ If you run into any issues or need help with using `shadow-clone` in your projec
 
 Add 
 ```toml
-shadow-clone = "0.0.1"
+shadow-clone = "0.1"
 ```
 to your `cargo.toml` under `[dependencies]` and add
 ```rust
