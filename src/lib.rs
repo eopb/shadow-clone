@@ -20,6 +20,16 @@
 /// }
 /// let bar = s;
 /// ```
+/// That expands to,
+/// ```rust
+/// use shadow_clone::shadow_clone;
+/// let s = "foo".to_string();
+/// {
+///     let s = s.clone();
+///     let c = move |x: i32| format!("{}{}", s, x);
+/// }
+/// let bar = s;
+/// ```
 /// You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
 #[macro_export]
 macro_rules! shadow_clone {
