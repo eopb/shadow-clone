@@ -14,7 +14,7 @@ If you run into any issues or need help with using `shadow-clone` in your projec
 
 Add 
 ```toml
-shadow-clone = "0.0.1"
+shadow-clone = "0.1"
 ```
 to your `cargo.toml` under `[dependencies]` and add
 ```rust
@@ -36,6 +36,16 @@ use shadow_clone::shadow_clone;
 let s = "foo".to_string();
 {
     shadow_clone!(s);
+    let c = move |x: i32| format!("{}{}", s, x);
+}
+let bar = s;
+```
+That expands to,
+```rust
+use shadow_clone::shadow_clone;
+let s = "foo".to_string();
+{
+    let s = s.clone();
     let c = move |x: i32| format!("{}{}", s, x);
 }
 let bar = s;
