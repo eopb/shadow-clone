@@ -7,6 +7,6 @@ readme = "README.md"
 description = """
 A macro to clone variables into the current scope shadowing old ones.
 """
-documentation = "https://docs.rs/shadow-clone/"
+documentation = "https://docs.rs/shadow-clone"
 repository = "https://gitlab.com/efunb/shadow-clone"
 edition = "2018"
