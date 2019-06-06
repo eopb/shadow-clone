@@ -3,7 +3,7 @@
 #![deny(clippy::pedantic, missing_docs)]
 
 /// Use this macro to clone variables into the current scope shadowing old ones.
-/// 
+///
 /// # Examples
 /// ```rust,compile_fail
 /// let s = "foo".to_string();
@@ -11,7 +11,7 @@
 /// let bar = s;
 /// ```
 /// This will not compile as `s` has been moved into the closure.
-/// 
+///
 /// This issue can be solved with this macro.
 /// ```rust
 /// use shadow_clone::shadow_clone;
