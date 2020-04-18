@@ -32,14 +32,31 @@
 /// ```
 /// You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
 ///
-/// You can also bind a clone as mutable by prefixing with `(mut)`. `shadow_clone!((mut) foo);`
+/// You can also bind a clone as mutable by prefixing with `mut`. `shadow_clone!(mut foo);`
 #[macro_export]
 macro_rules! shadow_clone {
-    { $($(($mut:tt))? $to_clone:ident),* } => {
-        $(
-            let $($mut)? $to_clone = $to_clone.clone();
-        )*
+    { $to_clone:ident, $($tt:tt)* } => {
+        $crate::shadow_clone!($to_clone);
+        $crate::shadow_clone!($($tt)*)
     };
+    { mut $to_clone:ident, $($tt:tt)* } => {
+        $crate::shadow_clone!(mut $to_clone);
+        $crate::shadow_clone!($($tt)*)
+    };
+    { (mut) $to_clone:ident, $($tt:tt)* } => {
+        $crate::shadow_clone!(mut $to_clone);
+        $crate::shadow_clone!($($tt)*)
+    };
+    { $to_clone:ident } => {
+        let $to_clone = $to_clone.clone();
+    };
+    { mut $to_clone:ident } => {
+        let mut $to_clone = $to_clone.clone();
+    };
+    { (mut) $to_clone:ident } => {
+        $crate::shadow_clone!(mut $to_clone)
+    };
+    () => ()
 }
 
 #[cfg(test)]
@@ -50,8 +67,19 @@ mod tests {
     fn mutable_clone() {
         let s = "foo".to_string();
         {
-            shadow_clone!((mut) s);
+            shadow_clone!(mut s);
             let _ = move |_: i32| s = "changed".to_string();
+        }
+    }
+    #[test]
+    #[allow(unused_mut)]
+    fn random_silly_clones() {
+        let s1 = "foo".to_string();
+        let s2 = "bar".to_string();
+        let s3 = "baz".to_string();
+        {
+            shadow_clone!(mut s1, (mut) s2, s3);
+            let _ = move |_: i32| s1 = format!("{}{}{}", s1, s2, s3);
         }
     }
 }

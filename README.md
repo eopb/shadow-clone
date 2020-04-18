@@ -14,7 +14,7 @@ If you run into any issues or need help with using `shadow-clone` in your projec
 
 Add 
 ```toml
-shadow-clone = "0.1"
+shadow-clone = "1"
 ```
 to your `cargo.toml` under `[dependencies]` and add
 ```rust
@@ -23,7 +23,7 @@ use shadow_clone::shadow_clone;
 to your main file.
 
 ## Examples
-```rust,compile_fail
+```rust
 let s = "foo".to_string();
 let c = move |x: i32| format!("{}{}", s, x);
 let bar = s;
@@ -52,7 +52,7 @@ let bar = s;
 ```
 You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
 
-You can also bind a clone as mutable by prefixing with `(mut)`. `shadow_clone!((mut) foo);`
+You can also bind a clone as mutable by prefixing with `mut`. `shadow_clone!(mut foo);`
 
 ## Docs
 
