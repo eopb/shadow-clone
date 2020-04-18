@@ -1,4 +1,4 @@
-# Next
+# 1.1.0
 - Support mutable cloning without extra brackets. `shadow_clone!(mut foo);`
 
 # **1.0.0**
