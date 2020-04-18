@@ -1,3 +1,6 @@
+# 1.2.0
+- Add support or `#![no_std]`
+
 # 1.1.0
 - Support mutable cloning without extra brackets. `shadow_clone!(mut foo);`
 
