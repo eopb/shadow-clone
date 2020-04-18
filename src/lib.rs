@@ -31,11 +31,27 @@
 /// let bar = s;
 /// ```
 /// You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
+///
+/// You can also bind a clone as mutable by prefixing with `(mut)`. `shadow_clone!((mut) foo);`
 #[macro_export]
 macro_rules! shadow_clone {
-    ($ ($to_clone:ident) ,*) => {
+    { $($(($mut:tt))? $to_clone:ident),* } => {
         $(
-            let $to_clone = $to_clone.clone();
+            let $($mut)? $to_clone = $to_clone.clone();
         )*
     };
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::shadow_clone;
+
+    #[test]
+    fn mutable_clone() {
+        let s = "foo".to_string();
+        {
+            shadow_clone!((mut) s);
+            let _ = move |_: i32| s = "changed".to_string();
+        }
+    }
 }
