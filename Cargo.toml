@@ -1,6 +1,6 @@
 [package]
 name = "shadow-clone"
-version = "1.2.0"
+version = "1.2.1"
 authors = ["Ethan Brierley <ethanboxx@gmail.com>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
@@ -9,4 +9,6 @@ A macro to clone variables into the current scope shadowing old ones.
 """
 documentation = "https://docs.rs/shadow-clone"
 repository = "https://gitlab.com/efunb/shadow-clone"
+keywords = ["macro", "no-std", "rust-patterns", "development-tools", "simple"]
+categories = ["no-std", "rust-patterns", "development-tools"]
 edition = "2018"

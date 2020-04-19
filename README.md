@@ -4,6 +4,7 @@ A macro to clone variables into the current scope shadowing old ones.
 [![pipeline status](https://gitlab.com/efunb/shadow-clone/badges/stable/pipeline.svg)](https://gitlab.com/efunb/shadow-clone/commits/stable)
 [![Latest version](https://img.shields.io/crates/v/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
 [![Latest Docs](https://docs.rs/shadow-clone/badge.svg)](https://docs.rs/shadow-clone)
+[![License](https://img.shields.io/crates/l/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
 [![downloads-badge](https://img.shields.io/crates/d/shadow-clone.svg)](https://crates.io/crates/shadow-clone)
 
 ## Help
@@ -50,9 +51,9 @@ let s = "foo".to_string();
 }
 let bar = s;
 ```
-You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
+You can also clone multiple variables separated by commas: `shadow_clone!(foo, bar);`.
 
-You can also bind a clone as mutable by prefixing with `mut`. `shadow_clone!(mut foo);`
+You can also bind a clone as mutable by prefixing with `mut`: `shadow_clone!(mut foo);`.
 
 ## Docs
 
