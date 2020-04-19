@@ -50,9 +50,9 @@ let s = "foo".to_string();
 }
 let bar = s;
 ```
-You can also clone multiple variables separated by commas. `shadow_clone!(foo, bar);`
+You can also clone multiple variables separated by commas: `shadow_clone!(foo, bar);`.
 
-You can also bind a clone as mutable by prefixing with `mut`. `shadow_clone!(mut foo);`
+You can also bind a clone as mutable by prefixing with `mut`: `shadow_clone!(mut foo);`.
 
 ## Docs
 
